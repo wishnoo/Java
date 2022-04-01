@@ -1,4 +1,4 @@
-# MaxDoubleSliceSum
+# MaxDoubleSliceSum - Codility
 Find the maximal sum of any double slice.
 
 A non-empty array A consisting of N integers is given.
