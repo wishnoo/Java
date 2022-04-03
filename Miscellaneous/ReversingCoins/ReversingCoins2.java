@@ -33,12 +33,18 @@ public class ReversingCoins2 {
 
         int N1 = 10;
         System.out.println(obj.solution(N1));
+        // obj.solution(N1) should return:
+        // 3
 
         int N2 = 11;
         System.out.println(obj.solution(N2));
+        // obj.solution(N2) should return:
+        // 3
 
         int N3 = 16;
         System.out.println(obj.solution(N3));
+        // obj.solution(N3) should return:
+        // 4
     }
 
     // Complexity Analysis
