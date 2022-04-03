@@ -52,7 +52,7 @@ public class CountFactors {
         // 4
 
         // Complexity Analysis
-        // Time Complexity - 0(N) - sqrt is greater than logN steps but smaller than N since it is a factor of N based on rule 2 we can omit constants.
+        // Time Complexity - 0(sqrt(N)) - Process elements upto sqrt(N)
         // Space Complexity - 0(1) - No data type other than factors used here that scales with N.
 
     }
