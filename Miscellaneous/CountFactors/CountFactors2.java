@@ -1,4 +1,4 @@
-package Arrays.SingleDimentionalArrays.CountFactors;
+package Miscellaneous.CountFactors;
 
 public class CountFactors2 {
     
