@@ -1,4 +1,4 @@
-# CountFactors
+# CountFactors - Codility
 Count factors of given number n.
 
 A positive integer D is a factor of a positive integer N if there exists an integer M such that N = D * M.
