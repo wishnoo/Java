@@ -1,6 +1,6 @@
 # MinPerimeterRectangle - Codility
 
-Find the minimal perimeter of any rectangle whose area equals N.
+## Find the minimal perimeter of any rectangle whose area equals N.
 
 An integer N is given, representing the area of some rectangle.
 
