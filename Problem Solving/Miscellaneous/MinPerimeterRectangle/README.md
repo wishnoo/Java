@@ -14,6 +14,7 @@ For example, given integer N = 30, rectangles of area 30 are:
 (2, 15), with a perimeter of 34,
 (3, 10), with a perimeter of 26,
 (5, 6), with a perimeter of 22.
+
 Write a function:
 
 class Solution { public int solution(int N); }
