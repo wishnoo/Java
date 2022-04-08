@@ -46,5 +46,14 @@ public class Sieve {
     public static void main(String[] args) {
         Sieve obj = new Sieve();
         System.out.println(Arrays.toString(obj.solution(17)));
+        // obj.solution(17) should return:
+        // [false, false, true, true, false, true, false, true, false, false, false, true, false, true, false, false, false, true]
     }
+    // Complexity Analysis
+        // Time Complexity
+            // For each prime number p <= sqrt(N) we cross out at most n p numbers, so we get the following number of operations:
+            // n / 2 + n / 3 + n / 5 + .....
+            // The reciprocals of prime equals O(log log N). The overall time is O(n log logN)
+        // Space Complexity
+            // O(n) - boolean array used upto size N.
 }
