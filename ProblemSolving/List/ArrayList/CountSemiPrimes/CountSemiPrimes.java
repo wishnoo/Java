@@ -17,6 +17,7 @@ public class CountSemiPrimes {
         int[] semiPrime = semiPrime(prime, N);
 
         // find sum of semiPrimes instances at any index. Similar to Kadane's algorithm.
+        // Reason we used N + 1 is because we omitting the 0 index to match index with value fromm 1 to N.
         int[] semiPrimeSum = new int[N + 1]; 
         for (int i = 1; i < semiPrime.length; i++) {
             // Update the current semiPrimeSum value based on its previous value and the current semiPrime value (0's and 1's).
@@ -42,6 +43,7 @@ public class CountSemiPrimes {
     public Integer[] sieve (int N){
         // This function is used to find all the primes below the passed value N using sieve of Eratosthenes algorithm.
         // By default boolean array consists of value false.
+        // Reason we used N + 1 is because we omitting the 0 index to match index with value fromm 1 to N.
         boolean[] process = new boolean[N + 1];
         // Fill the process array with true.
         Arrays.fill(process, Boolean.TRUE);
@@ -102,4 +104,13 @@ public class CountSemiPrimes {
         // obj.solution(N, P, Q) should return:
         // [10, 4, 0]
     }
+
+    // Complexity Analysis
+        // Time Complexity - 0(N * log(log N) + M)
+        // 0(N * log(log N)) is the complexity for a series of reciprocal of primes times N.(Harmonic series of primes)
+        // 0(M) is the complexity of rest of for loops.
+
+        // Space Complexity - 0(N)
+        // Array's used space upto max N + 1
+        // Even though it should have 3 * N Based on the 2nd rule of Big 0 we can avoid all the constants.
 }
