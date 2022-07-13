@@ -31,4 +31,8 @@ public class BestStockPrice2 {
         // int[] prices = {7,6,4,3,1};
         System.out.println(obj.solution(prices));
     }
+
+    // Complexity Analysis
+        // Time Complexity - O(n). Only a single pass is needed.
+        // Space Complexity - O(1). Only variables are used.
 }
