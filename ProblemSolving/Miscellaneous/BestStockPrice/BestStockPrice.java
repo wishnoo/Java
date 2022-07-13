@@ -30,9 +30,15 @@ public class BestStockPrice {
 
     public static void main(String[] args) {
         BestStockPrice obj = new BestStockPrice();
-        // int[] prices = {7,1,5,3,6,4};
-        int[] prices = {7,6,4,3,1};
-        System.out.println(obj.solution(prices));
+        int[] prices1 = {7,1,5,3,6,4};
+        System.out.println(obj.solution(prices1));
+        // obj.solution(prices1) should return:
+        // 5
+
+        int[] prices2 = {7,6,4,3,1};
+        System.out.println(obj.solution(prices2));
+        // obj.solution(prices2) should return:
+        // 0
     }
 
     // Complexity Analysis
