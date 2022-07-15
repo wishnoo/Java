@@ -5,31 +5,29 @@ import java.util.HashMap;
 // import java.util.ListIterator;
 import java.util.ArrayList;
 
-public class GroupAnagrams {
+// This solution corresponds to "Group words with same set of characters"
+public class GroupAnagrams2 {
     
-    // This method returns elements in the string in alphabetical order.
-    public String orderedElements (String s){
-        ArrayList<ArrayList<String>> orderList = new ArrayList<>();
-        for (int i = 0; i < 26; i++) {
-            orderList.add(new ArrayList<>());
-        }
+    // This method returns unique elements in the string in alphabetical order.
+    // While using this method we remove the duplicates and therefore we are comparing if the strings contain the same characters and not the exact number of characters.
+    public String uniqueElements (String s){
+        boolean[] visited = new boolean[26];
+        Arrays.fill(visited, false);
 
         for (int i = 0; i < s.length(); i++) {
             // We are assuming all characters are lowercase.
             // Subtracting with a causes the index to be within 0 to 25
-            orderList.get(s.charAt(i) - 'a').add((String.valueOf(s.charAt(i))));
+            visited[s.charAt(i) - 'a'] = true;
         }
 
-        String orderedString = "";
+        String uniqueString = "";
 
-        for (int j = 0; j < orderList.size(); j++) {
+        for (int j = 0; j < visited.length; j++) {
             // char type cast is needed to convert number to character
-            String tempString = String.join("",orderList.get(j));
-            orderedString += tempString;
+            if(visited[j]) uniqueString += (char)(j + 'a');
         }
-        System.out.println("orderedString: " + orderedString);
 
-        return orderedString;
+        return uniqueString;
     }
 
 
@@ -41,7 +39,7 @@ public class GroupAnagrams {
         // method to iterate the input and store the input string as value
         for (int j = 0; j < input.length; j++) {
             // Retrieve the unique string with help of the method uniqueElements
-            String unique = orderedElements(input[j]);
+            String unique = uniqueElements(input[j]);
 
             // If the map does have the key already then add to the list.
             if(processMap.containsKey(unique)){
@@ -57,20 +55,19 @@ public class GroupAnagrams {
 
         System.out.println("processMap: " + processMap);
 
-        // outputList will hold the lists to be outputted
-        // ArrayList constructor can accept other collections and therefore we can pass the set view into it.
-        ArrayList<ArrayList<String>> outputList = new ArrayList<>(processMap.values());
+        // outputList will hold the lists in decreasing order of size
+        ArrayList<ArrayList<String>> outputList = new ArrayList<>();
 
-        // for(String s : processMap.keySet()){
-        //     outputList.add(processMap.get(s));
-        // }
+        for(String s : processMap.keySet()){
+            outputList.add(processMap.get(s));
+        }
         
         // return the ArrayList of ArrayList
         return outputList;
     }
 
     public static void main(String[] args) {
-        GroupAnagrams obj = new GroupAnagrams();
+        GroupAnagrams2 obj = new GroupAnagrams2();
         String[] input = {"eat","tea","tan","ate","nat","bat"};
         System.out.println(obj.solution(input));
         // obj.solution(input) should return:
@@ -88,7 +85,7 @@ public class GroupAnagrams {
     }
 
      // Complexity Analysis
-        // Time Complexity - 0(N * A + N * K + N * A) = 0(N * K) - Where N is the length of input, K is the length of each string in input, A is the length 26. Overall it is equal to 0(N * K)
-        // Space Complexity - 0(N * K + N * A) = 0(N * K) - This is the data stored for key value pair and the count array.Where N is the length of input, K is the length of each string in input, A is the length 26.
+        // Time Complexity - 0(N * K + N * A) - Where N is the length of input, K is the length of each string in input, A is the length 26.
+        // Space Complexity - 0(N * K + N * A) - HashTable and boolean array of 26 used.
 }
 
