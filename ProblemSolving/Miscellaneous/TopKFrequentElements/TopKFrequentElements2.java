@@ -25,7 +25,7 @@ public class TopKFrequentElements2 {
         }
 
         // Initialize each arraylist with the main arraylist. This is required as we cannot refer to a particular index as by default list will be of size 0.
-        // Adding a number while initializing list doesn't change as that value means the number of elements it can have before it increase the size.
+        // Adding a number to the constructor while initializing list doesn't change as that value means the number of elements it can have before it increase the size.
         // num.length + 1 is used because one number can be duplicated across the entire input.
         for (int i = 0; i < nums.length + 1; ++i){
             list.add(new ArrayList<Integer>());
@@ -42,6 +42,7 @@ public class TopKFrequentElements2 {
         //     ArrayList<Integer> current = list.get(i);
         //     if (current.isEmpty()) continue;
         //     for (int j = 0; j < current.size(); j++) {
+        //         if(y >= k) break;
         //         output[y++] = current.get(j);
         //     }
         // }
@@ -53,9 +54,12 @@ public class TopKFrequentElements2 {
             if(current.isEmpty()) continue;
             Iterator<Integer> iterator_sub = current.iterator();
             while(iterator_sub.hasNext()){
-                output[y++] = iterator_sub.next(); 
+                // checking if the output array has filled enough. There can be a case where there are more than k numbers that have same number of occurrences.
+                // Placing at the top of the while loop makes sure that in case there are less occurrences than k when it goes to the next list we check again.
+                if(y >= k) break;
+                output[y++] = iterator_sub.next();
             }
-            if(y >= k) break;
+            // if(y >= k) break;
         }
 
         return output;
@@ -63,7 +67,8 @@ public class TopKFrequentElements2 {
     
     public static void main(String[] args) {
         TopKFrequentElements2 obj = new TopKFrequentElements2();
-        int[] nums = {1,1,1,2,2,3};
+        // int[] nums = {1,1,1,2,2,3};
+        int[] nums = {1,1,1,2,2,2,3,3,3};
         int[] nums2 = {1};
         int k = 2;
         int k2 = 1;
