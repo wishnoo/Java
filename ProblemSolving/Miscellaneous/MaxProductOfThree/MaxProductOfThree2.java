@@ -1,7 +1,4 @@
 package ProblemSolving.Miscellaneous.MaxProductOfThree;
-
-import java.util.Arrays;
-
 public class MaxProductOfThree2 {
     /* Something to note here is that two negative numbers when multiplied create a positive number.
         Taking that into account we will have two possibilities 
