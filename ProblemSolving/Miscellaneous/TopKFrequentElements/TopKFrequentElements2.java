@@ -75,4 +75,9 @@ public class TopKFrequentElements2 {
         System.out.println(Arrays.toString(obj.topKFrequent(nums, k)));
         System.out.println(Arrays.toString(obj.topKFrequent(nums2, k2)));
     }
+
+     // Complexity Analysis
+        // Time Complexity - 0(N) - Iterated over the array
+        // Space Complexity - 0(N) - data structure used.
+}
 }
