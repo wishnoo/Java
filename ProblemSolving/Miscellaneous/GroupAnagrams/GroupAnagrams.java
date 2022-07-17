@@ -1,6 +1,5 @@
 package ProblemSolving.Miscellaneous.GroupAnagrams;
 
-import java.util.Arrays;
 import java.util.HashMap;
 // import java.util.ListIterator;
 import java.util.ArrayList;
