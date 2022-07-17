@@ -1,5 +1,11 @@
 {
     "java.project.sourcePaths": [
         "."
+    ],
+    "cSpell.ignoreWords": [
+        "ddddddddddg",
+        "dgggggggggg",
+        "racecar",
+        "strs"
     ]
 }
