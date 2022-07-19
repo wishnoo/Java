@@ -58,7 +58,7 @@ public class LongestCommonPrefix4 {
         // obj.solution(input2) should return:
         // ""
     }
-
+    
     // Complexity Analysis
             // Time Complexity - Time complexity : O(S⋅logM), where S is the sum of all characters in all strings, m is the no of levels binary search divides.
             // The algorithm makes logM iterations, for each of them there are S=M⋅N comparisons, which gives in total O(S⋅logM) time complexity.
