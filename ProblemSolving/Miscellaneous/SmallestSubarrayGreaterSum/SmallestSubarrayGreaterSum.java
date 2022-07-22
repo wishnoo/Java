@@ -43,4 +43,8 @@ public class SmallestSubarrayGreaterSum {
         // obj.solution(input2, sum2) should return:
         // 0
     }
+
+    // Complexity Analysis
+        // Time Complexity - Time complexity : O(N), where N is the number of elements, The outer for loop runs for all elements, and the inner while loop processes each element only once; therefore, the time complexity of the algorithm will be O(N+N), which is asymptotically equivalent to O(N).
+        // Space Complexity - 0(1) - Constant memory
 }
