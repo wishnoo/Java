@@ -49,4 +49,10 @@ public class LongestSubstringDistinctCharacters {
         // obj.solution(input3) should return:
         // 3
     }
+
+    /* 
+    Complexity Analysis
+        Time Complexity - Time complexity : O(N + N) -> 0(N), where N is the number of elements.
+        Space Complexity - 0(26) -> 0(1) - Constant memory
+    */
 }
