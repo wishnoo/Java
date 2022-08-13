@@ -1,69 +1,37 @@
 package com.wishnoo.threading;
 
+import java.util.Iterator;
+
 public class Application {
 
 	public static void main(String[] args) {
 		
-		System.out.println("Starting Thread 1");
-		Thread t1 = new Thread(new Runnable()  {
-
-			@Override
-			public void run() {
-//				Thread.currentThread().setName(name);
-				for(int i=0; i< 1000; i++) {
-					System.out.println("number: " + i + " Name: " + Thread.currentThread().getName());
-					
-					try {
-						Thread.sleep(10);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
-			}
-		});
-		t1.start();
+		Sequence sequence = new Sequence();
 		
-		System.out.println("Starting Thread 2");
-		Thread t2 = new Thread(new Runnable()  {
-
-			@Override
-			public void run() {
-//				Thread.currentThread().setName(name);
-				for(int i=0; i< 1000; i++) {
-					System.out.println("number: " + i + " Name: " + Thread.currentThread().getName());
-					
-					try {
-						Thread.sleep(10);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
-			}
-		});
-		t2.start();
+		Worker worker1 = new Worker(sequence);
+		worker1.start();
 		
+		Worker worker2 = new Worker(sequence);
+		worker2.start();
 	}
+	
 }
 
-class Task implements Runnable {
+class Worker extends Thread {
 	
-	private String name;
+	Sequence sequence = null;
 	
-	public Task() {
+	public Worker(Sequence sequence) {
 		
-	}
-	public Task(String name) {
-		this.name = name;
+		this.sequence = sequence;
 	}
 	
-	@Override
-	public void run(){
-		Thread.currentThread().setName(name);
-		for(int i=0; i< 1000; i++) {
-			System.out.println("number: " + i + " Name: " + Thread.currentThread().getName());
-			
+	public void run() {
+		
+		for(int i=0; i < 100; i++) {
+			System.out.println(Thread.currentThread().getName() + " got value: " + sequence.getNext());
 			try {
-				Thread.sleep(10);
+				Thread.sleep(500);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
