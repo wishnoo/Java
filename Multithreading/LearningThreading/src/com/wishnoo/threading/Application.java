@@ -5,13 +5,11 @@ public class Application {
 	public static void main(String[] args) {
 		
 		System.out.println("Starting Thread 1");
-		Task taskRunner = new Task("Thread-A");
-		Thread t1 = new Thread(taskRunner);
+		Thread t1 = new Thread(new Task("Thread-A"));
 		t1.start();
 		
 		System.out.println("Starting Thread 2");
-		Task taskRunner2 = new Task("Thread-B");
-		Thread t2 = new Thread(taskRunner2);
+		Thread t2 = new Thread(new Task("Thread-B"));
 		t2.start();
 		
 	}
