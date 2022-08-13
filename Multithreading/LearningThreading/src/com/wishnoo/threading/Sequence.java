@@ -4,10 +4,9 @@ public class Sequence {
 
 	private int value = 0;
 	
-	public int getNext() {
-		synchronized (this){
-			value++;
-			return value;
-		}
+	public synchronized int getNext() {
+		
+		value++;
+		return value;
 	}
 }
