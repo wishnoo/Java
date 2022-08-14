@@ -2,10 +2,11 @@ package com.wishnoo.inventory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class InventoryManager {
 
-	List<Product> soldProductList = new ArrayList<Product>();
+	List<Product> soldProductList = new CopyOnWriteArrayList<Product>();
 	List<Product> purchasedProductList = new ArrayList<Product>();
 	
 	public void populateSoldProducts() {

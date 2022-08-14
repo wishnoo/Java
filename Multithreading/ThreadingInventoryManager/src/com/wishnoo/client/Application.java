@@ -28,8 +28,8 @@ public class Application {
 		});
 		
 		inventoryTask.start();
-		inventoryTask.join();
-//		Thread.sleep(2000);
+//		inventoryTask.join();
+		Thread.sleep(2000);
 		displayTask.start();
 	}
 }
